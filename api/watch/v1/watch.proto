@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package api.watch.v1;
+
+import "google/api/annotations.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/uneva/dd-watch/api/watch/v1;v1";
+
+service WatchService {
+  rpc RelationStat(RelationStatRequest) returns (RelationStatResponse) {
+    option (google.api.http) = {get: "/v1/watch/relation/stat"};
+  }
+}
+
+message RelationStatRequest {
+  int64 vmid = 1 [(validate.rules).int64.gt = 0];
+}
+
+message RelationStatResponse {
+  int64 mid = 1 [(validate.rules).int64.gt = 0];
+  int64 following = 2 [(validate.rules).int64.gt = 0];
+  int64 whisper = 3 [(validate.rules).int64.gt = 0];
+  int64 black = 4 [(validate.rules).int64.gt = 0];
+  int64 follower = 5 [(validate.rules).int64.gt = 0];
+}

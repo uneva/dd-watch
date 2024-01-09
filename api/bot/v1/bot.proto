@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package api.bot.v1;
+
+import "google/api/annotations.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/uneva/dd-watch/api/bot/v1;v1";
+
+service BotService {
+  rpc Mark(MarkRequest) returns (MarkResponse) {
+    option (google.api.http) = {get: "/v1/bot/mark"};
+  }
+}
+
+message MarkRequest {
+  int64 bid = 1 [(validate.rules).int64.gt = 0];
+}
+
+message MarkResponse {
+  int64 bid = 1 [(validate.rules).int64.gt = 0];
+}
