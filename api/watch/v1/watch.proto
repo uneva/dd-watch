@@ -18,9 +18,9 @@ message RelationStatRequest {
 }
 
 message RelationStatResponse {
-  int64 mid = 1 [(validate.rules).int64.gt = 0];
-  int64 following = 2 [(validate.rules).int64.gt = 0];
-  int64 whisper = 3 [(validate.rules).int64.gt = 0];
-  int64 black = 4 [(validate.rules).int64.gt = 0];
-  int64 follower = 5 [(validate.rules).int64.gt = 0];
+  int64 mid = 1;
+  int64 following = 2;
+  int64 whisper = 3;
+  int64 black = 4;
+  int64 follower = 5;
 }
