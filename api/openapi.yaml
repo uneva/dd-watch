@@ -11,6 +11,8 @@ paths:
         get:
             tags:
                 - BotService
+            summary: Bot Mark
+            description: Mark marks a bot as active
             operationId: BotService_Mark
             parameters:
                 - name: bid
@@ -34,6 +36,8 @@ paths:
         get:
             tags:
                 - WatchService
+            summary: Relation Stat
+            description: Watch a user
             operationId: WatchService_RelationStat
             parameters:
                 - name: vmid

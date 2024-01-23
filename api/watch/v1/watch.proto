@@ -2,13 +2,16 @@ syntax = "proto3";
 
 package api.watch.v1;
 
+import "gnostic/openapi/v3/annotations.proto";
 import "google/api/annotations.proto";
 import "validate/validate.proto";
 
 option go_package = "github.com/uneva/dd-watch/api/watch/v1;v1";
 
 service WatchService {
+  // Watch a user
   rpc RelationStat(RelationStatRequest) returns (RelationStatResponse) {
+    option (gnostic.openapi.v3.operation) = {summary: "Relation Stat"};
     option (google.api.http) = {get: "/v1/watch/relation/stat"};
   }
 }

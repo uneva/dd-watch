@@ -2,13 +2,16 @@ syntax = "proto3";
 
 package api.bot.v1;
 
+import "gnostic/openapi/v3/annotations.proto";
 import "google/api/annotations.proto";
 import "validate/validate.proto";
 
 option go_package = "github.com/uneva/dd-watch/api/bot/v1;v1";
 
 service BotService {
+  // Mark marks a bot as active
   rpc Mark(MarkRequest) returns (MarkResponse) {
+    option (gnostic.openapi.v3.operation) = {summary: "Bot Mark"};
     option (google.api.http) = {get: "/v1/bot/mark"};
   }
 }
