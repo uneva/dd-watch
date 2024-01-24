@@ -22,7 +22,8 @@ plugins:
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
-  - plugin: buf.build/grpc-ecosystem/gateway
+  - plugin: go-http
+    path: /Users/codemaggot/go/bin/protoc-gen-go-http
     out: api
     opt:
       - paths=source_relative
