@@ -6,7 +6,9 @@ import (
 	"github.com/go-kratos/kratos/v2/log"
 )
 
-type WatchRepo interface{}
+type WatchRepo interface {
+	ToLink(ctx context.Context, uid int64) error
+}
 
 type WatchUsecase struct {
 	repo WatchRepo
@@ -22,5 +24,5 @@ func NewWatchUsecase(repo WatchRepo, logger log.Logger) *WatchUsecase {
 
 func (uc *WatchUsecase) ToLink(ctx context.Context, uid int64) error {
 	uc.log.Infof("uid %v", uid)
-	return nil
+	return uc.repo.ToLink(ctx, uid)
 }

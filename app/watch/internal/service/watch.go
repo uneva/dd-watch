@@ -11,7 +11,7 @@ import (
 func NewWatchService(watch *biz.WatchUsecase, logger log.Logger) *WatchService {
 	return &WatchService{
 		wc:  watch,
-		log: log.NewHelper(log.With(logger, "module", "service/watch-service")),
+		log: log.NewHelper(log.With(logger, "module", "service/watch")),
 	}
 }
 
