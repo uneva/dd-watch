@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package api.watch.v1;
+
+import "gnostic/openapi/v3/annotations.proto";
+import "google/api/annotations.proto";
+import "validate/validate.proto";
+
+option go_package = "api/watch/v1;v1";
+
+service WatchService {
+  rpc ToLink(ToLinkRequest) returns (ToLinkResponse) {
+    option (gnostic.openapi.v3.operation) = {summary: "ToLink"};
+    option (google.api.http) = {get: "/v1/tolink/{uid}"};
+  }
+}
+
+message ToLinkRequest {
+  int64 uid = 1 [(validate.rules).int64.gt = 0];
+}
+
+message ToLinkResponse {}
