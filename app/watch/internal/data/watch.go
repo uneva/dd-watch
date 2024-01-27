@@ -13,6 +13,6 @@ type watchRepo struct {
 func NewWatchRepo(data *Data, logger log.Logger) biz.WatchRepo {
 	return &watchRepo{
 		data: data,
-		log:  log.NewHelper(logger),
+		log:  log.NewHelper(log.With(logger, "module", "data/watch")),
 	}
 }

@@ -14,5 +14,5 @@ type WatchService struct {
 
 	log *log.Helper
 
-	watch *biz.WatchUsecase
+	wc *biz.WatchUsecase
 }

@@ -10,12 +10,15 @@ import (
 
 func NewWatchService(watch *biz.WatchUsecase, logger log.Logger) *WatchService {
 	return &WatchService{
-		watch: watch,
-		log:   log.NewHelper(logger),
+		wc:  watch,
+		log: log.NewHelper(log.With(logger, "module", "service/watch-service")),
 	}
 }
 
-func (s *WatchService) ToLink(ctx context.Context, req *v1.ToLinkRequest) (*v1.ToLinkResponse, error) {
-	s.log.Infof("input data %v", req)
+func (ws *WatchService) ToLink(ctx context.Context, req *v1.ToLinkRequest) (*v1.ToLinkResponse, error) {
+	ws.log.Infof("input data %v", req)
+
+	ws.wc.ToLink(ctx, req.Uid)
+
 	return &v1.ToLinkResponse{}, nil
 }
