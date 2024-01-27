@@ -7,8 +7,13 @@ import "google/protobuf/duration.proto";
 option go_package = "dd/watch/conf;conf";
 
 message Bootstrap {
-  Server server = 1;
-  Data data = 2;
+  Trace trace = 1;
+  Server server = 2;
+  Data data = 3;
+}
+
+message Trace {
+  string endpoint = 1;
 }
 
 message Server {
@@ -31,5 +36,15 @@ message Data {
     string driver = 1;
     string source = 2;
   }
+  message Redis {
+    string network = 1;
+    string addr = 2;
+    string password = 3;
+    int32 db = 4;
+    google.protobuf.Duration dial_timeout = 5;
+    google.protobuf.Duration read_timeout = 6;
+    google.protobuf.Duration write_timeout = 7;
+  }
   Database database = 1;
+  Redis redis = 2;
 }

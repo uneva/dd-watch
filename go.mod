@@ -13,13 +13,21 @@ require (
 )
 
 require (
+	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/go-kratos/aegis v0.2.0 // indirect
+	github.com/go-logr/logr v1.2.4 // indirect
+	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-playground/form/v4 v4.2.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/gnostic-models v0.6.9-0.20230804172637-c7be7c783f49 // indirect
 	github.com/google/uuid v1.4.0 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
+	github.com/imdario/mergo v0.3.16 // indirect
+	go.opentelemetry.io/otel v1.16.0 // indirect
+	go.opentelemetry.io/otel/metric v1.16.0 // indirect
+	go.opentelemetry.io/otel/trace v1.16.0 // indirect
 	golang.org/x/net v0.20.0 // indirect
+	golang.org/x/sync v0.5.0 // indirect
 	golang.org/x/sys v0.16.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/genproto v0.0.0-20240116215550-a9fa1716bcac // indirect
