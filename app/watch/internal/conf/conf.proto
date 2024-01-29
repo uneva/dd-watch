@@ -4,7 +4,7 @@ package dd.watch.conf;
 
 import "google/protobuf/duration.proto";
 
-option go_package = "dd/watch/conf;conf";
+option go_package = "github.com/uneva/dd-watch/app/watch/internal/conf;conf";
 
 message Bootstrap {
   Trace trace = 1;
