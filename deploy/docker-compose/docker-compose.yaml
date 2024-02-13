@@ -2,9 +2,12 @@
 version: "3"
 services:
   mysql:
+    init: true
     image: mysql:8
     container_name: mysql_server
     ports:
       - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: dangerous
+      MYSQL_USER: ddwatch
+      MYSQL_PASSWORD: ddwatch
