@@ -1,4 +1,6 @@
 # docker-compose -f deploy/docker-compose/docker-compose.yaml up
+# docker-compose -f deploy/docker-compose/docker-compose.yaml up -d
+# docker-compose -f deploy/docker-compose/docker-compose.yaml up mysql
 version: "3"
 services:
   mysql:
@@ -6,8 +8,12 @@ services:
     image: mysql:8
     container_name: mysql_server
     ports:
-      - "3307:3306"
+      - "33060:3306"
     environment:
       MYSQL_ROOT_PASSWORD: dangerous
       MYSQL_USER: ddwatch
       MYSQL_PASSWORD: ddwatch
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
