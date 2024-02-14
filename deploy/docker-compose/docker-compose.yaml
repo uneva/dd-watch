@@ -15,5 +15,9 @@ services:
       MYSQL_PASSWORD: ddwatch
     volumes:
       - mysql-data:/var/lib/mysql
+      - mysql-log:/var/log/mysql
+      - mysql-config:/etc/mysql
 volumes:
   mysql-data:
+  mysql-log:
+  mysql-config:
